@@ -188,7 +188,7 @@ export default function Home() {
                     {form.travelers} {parseInt(form.travelers) === 1 ? "personne" : "personnes"}
                   </span>
                   <button type="button"
-                    onClick={() => updateForm({ travelers: String(Math.min(20, parseInt(form.travelers) + 1)) })}
+                    onClick={() => updateForm({ travelers: String(Math.min(6, parseInt(form.travelers) + 1)) })}
                     className="w-7 h-7 rounded-full bg-stone-200 hover:bg-orange-100 hover:text-orange-600 font-bold text-lg flex items-center justify-center transition-colors leading-none">+</button>
                 </div>
               </div>

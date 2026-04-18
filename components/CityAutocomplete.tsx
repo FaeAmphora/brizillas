@@ -3,18 +3,42 @@
 import { useState, useRef, useEffect } from "react";
 
 const CITIES = [
-  "Amsterdam","Athènes","Barcelone","Berlin","Bruxelles","Budapest","Copenhague","Dublin",
-  "Édimbourg","Florence","Genève","Istanbul","Lisbonne","Londres","Madrid","Marrakech",
-  "Milan","Moscou","Munich","Naples","Nice","Paris","Porto","Prague","Rome","Séville",
-  "Stockholm","Vienne","Varsovie","Zurich",
-  "Bali","Bangkok","Beijing","Dubaï","Hong Kong","Jakarta","Kyoto","Maldives","Mumbai",
-  "New Delhi","Osaka","Séoul","Shanghai","Singapour","Taipei","Tokyo","Ho Chi Minh-Ville",
-  "Cancún","La Havane","Mexico","Miami","Montréal","New York","Québec","Rio de Janeiro",
-  "Buenos Aires","Bogotá","Lima","Santiago","São Paulo",
-  "Le Caire","Casablanca","Nairobi","Johannesburg","Dakar","Abidjan","Tunis",
-  "Sydney","Melbourne","Auckland","Honolulu","Los Angeles","San Francisco","Las Vegas","Chicago",
-  "Agadir","Fès","Djerba","Zanzibar","Maurice","La Réunion","Phuket","Hanoï",
+  // Europe
+  "Amsterdam","Athènes","Barcelone","Belgrade","Berlin","Bilbao","Bordeaux","Bruxelles",
+  "Budapest","Bucarest","Cologne","Copenhague","Cracovie","Dublin","Édimbourg","Florence",
+  "Francfort","Genève","Grenoble","Helsinki","Istanbul","Kiev","Krakow","Lisbonne","Ljubljana",
+  "Londres","Luxembourg","Lyon","Madrid","Malaga","Malte","Marrakech","Marseille","Milan",
+  "Monaco","Moscou","Munich","Naples","Nice","Oslo","Palermo","Paris","Porto","Prague",
+  "Reykjavik","Rome","Rotterdam","Saint-Pétersbourg","Salzbourg","Sarajevo","Séville",
+  "Sofia","Stockholm","Strasbourg","Tallinn","Thessalonique","Toulouse","Valence","Varsovie",
+  "Venise","Vienne","Vilnius","Zagreb","Zurich","Dubrovnik","Split","Santorin","Mykonos",
+  "Rhodes","Ibiza","Majorque","Ténérife","Gran Canaria","Fuerteventura","Lanzarote",
+  // Afrique & Moyen-Orient
+  "Abidjan","Abu Dhabi","Accra","Agadir","Alexandrie","Alger","Amman","Beyrouth","Casablanca",
+  "Dakar","Djerba","Douala","Dubaï","Fès","Hurghada","Johannesburg","Lagos","Le Caire",
+  "Louxor","Marrakech","Maurice","Nairobi","Oman","Rabat","Sharm el-Sheikh","Tanger","Tunis",
+  "Zanzibar","La Réunion","Djibouti","Addis-Abeba","Kigali","Dar es Salaam",
+  // Asie
+  "Bali","Bangkok","Beijing","Bhoutan","Calcutta","Chennai","Chiang Mai","Colombo","Delhi",
+  "Doha","Goa","Hanoi","Ho Chi Minh-Ville","Hong Kong","Jakarta","Karachi","Katmandou",
+  "Koh Samui","Kuala Lumpur","Kyoto","Lahore","Luang Prabang","Maldives","Manille","Mumbai",
+  "Myanmar","Nagoya","Osaka","Pékin","Phnom Penh","Phuket","Sapporo","Séoul","Shanghai",
+  "Siem Reap","Singapour","Taipei","Tokyo","Ulaanbaatar","Yangon","Hiroshima","Nara",
+  // Amériques
+  "Bogotá","Buenos Aires","Cancún","Cartagena","Chicago","La Havane","Lima","Los Angeles",
+  "Medellín","Mexico","Miami","Montréal","New York","Oahu","Panamá","Québec","Quito",
+  "Rio de Janeiro","San Francisco","San José","Santiago","São Paulo","Toronto","Vancouver",
+  "Las Vegas","Orlando","Washington","Boston","Seattle","Denver","Honolulu","Antigua",
+  "Barbade","Jamaïque","Trinidad","Saint-Martin","Guadeloupe","Martinique","Saint-Barthélemy",
+  // Océanie & Pacifique
+  "Auckland","Brisbane","Fidji","Melbourne","Nouvelle-Calédonie","Perth","Polynésie française",
+  "Sydney","Tahiti","Wellington",
+  // France (villes de départ courantes)
+  "Bordeaux","Brest","Clermont-Ferrand","Dijon","Grenoble","Lille","Lyon","Marseille",
+  "Montpellier","Nantes","Nice","Paris","Rennes","Rouen","Strasbourg","Toulouse",
 ];
+
+const UNIQUE_CITIES = [...new Set(CITIES)].sort();
 
 interface Props {
   value: string;
@@ -39,13 +63,17 @@ export default function CityAutocomplete({ value, onChange, placeholder, label, 
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  function normalize(s: string) {
+    return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
   function handleInput(val: string) {
     onChange(val);
     if (val.length < 2) { setSuggestions([]); setOpen(false); return; }
-    const q = val.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const matches = CITIES.filter(c =>
-      c.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").startsWith(q)
-    ).slice(0, 6);
+    const q = normalize(val);
+    const starts = UNIQUE_CITIES.filter(c => normalize(c).startsWith(q));
+    const contains = UNIQUE_CITIES.filter(c => !normalize(c).startsWith(q) && normalize(c).includes(q));
+    const matches = [...starts, ...contains].slice(0, 8);
     setSuggestions(matches);
     setOpen(matches.length > 0);
   }
