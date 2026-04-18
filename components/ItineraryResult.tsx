@@ -83,7 +83,7 @@ export default function ItineraryResult({ itinerary, destination, departureCity,
           <h2 className="text-3xl font-bold mb-1" style={{ fontFamily: "var(--font-playfair)" }}>
             Voyage à {destination} 🗺️
           </h2>
-          <p className="text-white/60 text-sm mb-6">Itinéraire généré par IA — réserve dès maintenant aux meilleurs prix</p>
+          <p className="text-white/60 text-sm mb-6">Réserve dès maintenant aux meilleurs prix</p>
 
           {flight && (
             <div className="mb-5 bg-white/10 border border-white/20 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center gap-3">
@@ -92,7 +92,7 @@ export default function ItineraryResult({ itinerary, destination, departureCity,
                 <div>
                   <div className="text-white/60 text-xs uppercase tracking-wider">Prix estimé aller-retour / personne</div>
                   <div className="text-white font-bold text-xl">
-                    {flight.minPrice}€ — {flight.maxPrice}€
+                    {flight.minPrice}€ à {flight.maxPrice}€
                   </div>
                   <div className="text-white/50 text-xs">{flight.note}</div>
                 </div>
@@ -173,7 +173,7 @@ export default function ItineraryResult({ itinerary, destination, departureCity,
                   >
                     <span className="w-6 h-6 bg-blue-50 rounded-full flex items-center justify-center text-xs group-hover:bg-blue-100 transition-colors">🏨</span>
                     <span>Quartier conseillé : <span className="underline underline-offset-2">{day.hotel.area}</span></span>
-                    <span className="text-stone-300">— {day.hotel.suggestion}</span>
+                    <span className="text-stone-300">· {day.hotel.suggestion}</span>
                     <span className="text-blue-400">→</span>
                   </a>
                 </div>
@@ -184,7 +184,7 @@ export default function ItineraryResult({ itinerary, destination, departureCity,
       </div>
 
       <div className="text-center text-stone-400 text-xs py-2">
-        Les liens hôtels et activités sont des liens affiliés · Photos © Unsplash · Prix vols indicatifs
+        Les liens hôtels et activités sont des liens affiliés · Photos Unsplash · Prix vols indicatifs
       </div>
     </div>
   );

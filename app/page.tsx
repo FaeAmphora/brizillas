@@ -119,7 +119,7 @@ export default function Home() {
             <span className="animated-gradient">30 secondes</span>
           </h1>
           <p className="text-lg text-stone-500 max-w-xl mx-auto">
-            L&apos;IA planifie ton voyage jour par jour. Hôtels, activités, conseils — tout inclus, totalement gratuit.
+            Planifie ton voyage jour par jour. Hôtels, activités, conseils, tout inclus, totalement gratuit.
           </p>
         </div>
 
@@ -283,7 +283,7 @@ export default function Home() {
       </main>
 
       <footer className="text-center text-stone-400 text-xs py-6 border-t border-stone-200 mt-8 space-y-2">
-        <p>Brizillas © 2025 — Les liens hôtels et vols sont des liens affiliés. Votre utilisation nous aide à maintenir ce service gratuit.</p>
+        <p>Brizillas © 2025 · Les liens hôtels et vols sont des liens affiliés. Votre utilisation nous aide à maintenir ce service gratuit.</p>
         <p className="flex items-center justify-center gap-4">
           <a href="/politique-confidentialite" className="hover:text-stone-600 transition-colors">Politique de confidentialité</a>
           <span>·</span>
