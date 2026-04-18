@@ -283,7 +283,7 @@ export default function Home() {
       </main>
 
       <footer className="text-center text-stone-400 text-xs py-6 border-t border-stone-200 mt-8 space-y-2">
-        <p>Brizillas © 2025 · Les liens hôtels et vols sont des liens affiliés. Votre utilisation nous aide à maintenir ce service gratuit.</p>
+        <p>Brizillas © 2026</p>
         <p className="flex items-center justify-center gap-4">
           <a href="/politique-confidentialite" className="hover:text-stone-600 transition-colors">Politique de confidentialité</a>
           <span>·</span>
