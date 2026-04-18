@@ -1,0 +1,41 @@
+Politique d’Éditeur de logiciels de CJ Affiliate
+
+Le service Qualité du réseau de CJ Affiliate souhaite une transparence totale des éditeurs de logiciels (« Éditeurs de logiciels ») envers CJ et ses clients et tient à s'assurer que les éditeurs sachent ce qui est autorisé au sein du réseau CJ Affiliate. Les sections « Règlement » et « Règles » ci-dessous vous permettront de mieux comprendre ces principes.
+
+CJ Affiliate autorise les Éditeurs de logiciels à participer au réseau CJ dans la mesure où ils se conforment aux modalités du Contrat de service de l'éditeur.
+
+Règlement
+
+CJ Affiliate souhaite offrir transparence et choix à tous ses clients. Nous faisons notre possible pour assurer une transparence exemplaire en matière de fonctionnement, de distribution et de performance des logiciels dans des situations de trafic spécifiques et concernant leur impact sur les activités des annonceurs et le comportement des consommateurs. Cette transparence permet aux annonceurs et aux éditeurs de faire les choix appropriés pour établir des affiliations mutuellement bénéfiques et créer à terme de meilleures expériences pour les consommateurs.
+
+Consommateurs
+Les consommateurs ont le droit de comprendre et de valider l'installation de tout logiciel d'un éditeur CJ Affiliate sur leur appareil ou leur navigateur. Par ailleurs, les avantages qu'offre cette installation au consommateur doivent être évidents à la fois pour le consommateur, pour CJ Affiliate et pour l'annonceur.
+
+Annonceurs
+Les annonceurs doivent connaître l'ensemble des fonctions et objectifs du logiciel avant la distribution ou la redirection de trafic. L'annonceur est en droit de s'attendre à ce que sa marque soit affichée et protégée de manière appropriée à tout moment.
+
+Éditeurs
+Les éditeurs doivent s'efforcer d'agir en toute transparence, de générer du trafic et de percevoir des commissions conformément aux règles des conditions de rémunération de leur annonceur, dans les limites de ce qu'un consommateur peut raisonnablement attendre. Ils agiront de manière responsable et rapide en toute situation.
+
+CJ Affiliate
+CJ Affiliate est responsable de l'examen et de l'approbation de tous les logiciels actifs dans le réseau. La société fournit la plate-forme offrant la transparence et le choix qui régissent toutes les relations.
+
+Règles pour les Éditeurs de logiciels dans le réseau CJ Affiliate
+
+Les règles suivantes clarifient les exigences relatives aux activités des Éditeurs de logiciels au sein du réseau CJ Affiliate. Les activités logicielles incluent, sans s'y limiter, les logiciels téléchargeables, les plug-ins de navigateurs et les extensions de navigateur. Conformément au Contrat de service de l’éditeur CJ, toute activité non approuvée peut entraîner la résiliation, suspension ou désactivation du compte et/ou le remboursement des commissions.
+
+1. Tous les outils des Éditeurs de logiciels et toutes les versions de ces outils destinées aux annonceurs CJ Affiliate doivent être testés et approuvés par CJ Affiliate avant leur distribution. Il incombe à l’Éditeur de logiciels de faire retester et approuver les modifications par CJ Affiliate. Les améliorations des fonctionnalités et les modifications liées à la facilité d’utilisation sont soumises à l’approbation du service Qualité du réseau et doivent être ajoutées et divulguées dans la description du site web de l’Éditeur de logiciels.
+
+2. Les Éditeurs de logiciels doivent faire preuve d'une transparence totale envers CJ Affiliate et ses annonceurs concernant la distribution et les fonctionnalités. Les Éditeurs de logiciels ne peuvent pas grouper leurs extensions de navigateur pour les distribuer.
+
+3. Les Éditeurs de logiciels peuvent rediriger un consommateur vers un lien CJ Affiliate uniquement après que ce dernier a cliqué sur le logiciel téléchargeable, le plug-in de navigateur ou l'extension de navigateur. La fonctionnalité de redirection automatique est strictement interdite.
+
+4. Avant toute installation sur des appareils d'utilisateurs finaux depuis n'importe quel emplacement de téléchargement, les Éditeurs de logiciels doivent recevoir des utilisateurs finaux l'acceptation d'un contrat de licence des utilisateurs finaux (« CLUF ») et de sa politique de confidentialité qui décrit clairement et précisément le comportement et le fonctionnement du logiciel, avec, mais sans s'y limiter, une description explicite des activités qui déclencheront le placement de cookies d'affiliés.
+
+5. La désinstallation des logiciels doit toujours être possible, simple, complète et réalisable depuis les navigateurs et/ou systèmes d'exploitation des consommateurs.
+
+6. Immédiatement avant que le logiciel n'interagisse avec un consommateur, les Éditeurs de logiciels doivent : (a) reconnaître et respecter le trafic provenant de l'éditeur ; et (b) examiner tout le trafic pour trouver des preuves d'Interactions CJ antérieures (définies ci-dessous). Si des preuves d'Interactions CJ antérieures sont identifiées et que l'Éditeur de logiciels ne possède pas le domaine qui a dirigé le consommateur vers l'annonceur, il est interdit au logiciel de fonctionner dans la fenêtre du navigateur ou de rediriger le consommateur vers le site de l'annonceur en utilisant un lien de suivi CJ qui contient le PID de l'Éditeur de logiciels.   L'extension d'un Éditeur de logiciels peut s'activer si un consommateur interagit de manière proactive avec le logiciel de l'Éditeur de logiciels alors qu'il se trouve sur le site de l'annonceur.
+
+Le trafic sera considéré comme ayant eu des Interactions CJ préalables si l'une des conditions suivantes est remplie : (a) le consommateur a été redirigé via un domaine CJ ; (b) le code afsrc=1 est présent dans les liens de l'éditeur ; et/ou (c) le paramètre cjevent est présent dans les paramètres URL de la page de destination des annonceurs (« Interactions CJ antérieures »). Les Éditeurs de logiciels peuvent contacter le représentant CJ qui leur a été assigné ou le service clientèle pour obtenir la liste des domaines CJ. 
+
+26 août 2022
