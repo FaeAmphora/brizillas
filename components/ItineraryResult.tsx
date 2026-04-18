@@ -11,6 +11,7 @@ interface Props {
   departureCity?: string;
   departureDate?: string;
   returnDate?: string;
+  showPhotos?: boolean;
 }
 
 function useActivityPhoto(query: string) {
@@ -34,7 +35,7 @@ function ActivityPhoto({ query }: { query: string }) {
   );
 }
 
-export default function ItineraryResult({ itinerary, destination, departureCity, departureDate, returnDate }: Props) {
+export default function ItineraryResult({ itinerary, destination, departureCity, departureDate, returnDate, showPhotos = true }: Props) {
   let data: ItineraryData | null = null;
   let days: Day[] = [];
   let parseError = false;
@@ -157,7 +158,7 @@ export default function ItineraryResult({ itinerary, destination, departureCity,
                           💡 {activity.tip}
                         </div>
                       )}
-                      {showPhoto && <ActivityPhoto query={`${activity.name} ${destination}`} />}
+                      {showPhotos && showPhoto && <ActivityPhoto query={`${activity.name} ${destination}`} />}
                     </div>
                   </div>
                 );

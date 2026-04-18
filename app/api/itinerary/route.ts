@@ -1,6 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
 
+export const maxDuration = 60;
+
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
@@ -36,12 +38,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Destination et durée requises" }, { status: 400 });
   }
 
+  const numDays = parseInt(duration);
+  const activitiesPerDay = numDays > 10 ? 3 : numDays > 6 ? 4 : 5;
+  const maxTokens = numDays > 10 ? 6000 : numDays > 6 ? 5000 : 4096;
+
   const prompt = `Tu es un expert en voyage. Génère un itinéraire de voyage détaillé pour les paramètres suivants :
 - Ville de départ : ${departureCity || "Paris"}
 - Destination : ${destination}
 - Date de départ : ${departureDate || "non précisée"}
 - Date de retour : ${returnDate || "non précisée"}
-- Durée : ${duration} jours
+- Durée : ${numDays} jours
 - Nombre de voyageurs : ${travelers || 1}
 - Budget : ${budget}
 - Style : ${style}
@@ -62,7 +68,7 @@ Réponds UNIQUEMENT avec un objet JSON valide (pas de markdown, pas de texte ava
         {
           "time": "09:00",
           "name": "Nom de l'activité",
-          "description": "Description courte et utile (1-2 phrases)",
+          "description": "Description courte (1 phrase)",
           "tip": "Conseil pratique optionnel (prix, réservation, horaires...)"
         }
       ],
@@ -74,12 +80,12 @@ Réponds UNIQUEMENT avec un objet JSON valide (pas de markdown, pas de texte ava
   ]
 }
 
-Génère ${duration} jours complets avec 4-5 activités par jour. Sois précis, pratique et adapté au budget ${budget}.`;
+Génère ${numDays} jours complets avec exactement ${activitiesPerDay} activités par jour. Sois concis et pratique.`;
 
   try {
     const message = await client.messages.create({
       model: "claude-haiku-4-5-20251001",
-      max_tokens: 4096,
+      max_tokens: maxTokens,
       messages: [{ role: "user", content: prompt }],
     });
 

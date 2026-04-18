@@ -261,6 +261,7 @@ export default function Home() {
             departureCity={form.departureCity}
             departureDate={form.departureDate}
             returnDate={form.returnDate}
+            showPhotos={parseInt(form.duration) <= 6}
           />
         )}
 
